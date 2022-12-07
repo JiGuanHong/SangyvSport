@@ -100,11 +100,7 @@
 				this.getUserData();
 				console.log('用户登录状态', this.userStore.data.hasLogin);
 			}
-			console.log("load")
-		},
-		onShow() {
-			console.log("show");
-
+			// console.log("load")
 		},
 		methods: {
 			/**
@@ -168,7 +164,7 @@
 			async getUserData() {
 				try {
 					this.dataStore.userTodaySportData.today = dayjs().format("YYYY-MM-DD");
-					this.userStore.updateUserInfo();
+					// this.userStore.updateUserInfo();
 					const res = await db.collection('sangyv_user_sport').where("'user_id' == $cloudEnv_uid").get();
 					// console.log(res);
 					if (this.userStore.data.hasLogin) {

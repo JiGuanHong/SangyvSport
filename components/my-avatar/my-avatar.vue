@@ -33,7 +33,7 @@
 			hasLogin: {
 				handler(res) {
 					console.log(res);
-					console.log(this.userInfo)
+					// console.log("用户信息", this.userInfo)
 					if (res && this.userInfo.avatar_file.url && this.userInfo.avatar_file.url.substring(0, 8) ==
 						"cloud://") {
 						uniCloud.getTempFileURL({

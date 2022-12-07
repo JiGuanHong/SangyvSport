@@ -8,7 +8,7 @@ import {
 export const useUserStore = defineStore('user', {
 	state: () => {
 		return {
-			data: uni.getStorageSync('uni-id-pages-user') || {},
+			data: uni.getStorageSync('uni-id-pages-userInfo') || {},
 		}
 		// uni.getStorageSync('uni-id-pages-userInfo')||{}
 	},
@@ -17,11 +17,11 @@ export const useUserStore = defineStore('user', {
 	},
 	actions: {
 		updateUserInfo() {
-			this.data = uni.getStorageSync('uni-id-pages-user') || {};
-			// console.log('用户数据',this.data);
+			this.data = uni.getStorageSync('uni-id-pages-userInfo') || {};
+			console.log('用户信息', this.data);
 		},
 		deleteUserInfo() {
-			uni.removeStorageSync('uni-id-pages-user');
+			uni.removeStorageSync('uni-id-pages-userInfo');
 			this.data = {
 				userInfo: {},
 				hasLogin: false
